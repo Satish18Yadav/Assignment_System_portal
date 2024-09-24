@@ -15,12 +15,14 @@ public class TaskResponseDTO {
     private String taskDescription;
     private int task_status;
     private String taskDate;
+    private String taskPriority;
 
     public TaskResponseDTO convertToTask(Task task) {
         TaskResponseDTO newTask = new TaskResponseDTO();
         newTask.setTaskName(task.getTaskName());
         newTask.setTaskDescription(task.getDescription());
         newTask.setTaskDate(task.getDate());
+        newTask.setTaskPriority(task.getPriority());
         return newTask;
     }
 }

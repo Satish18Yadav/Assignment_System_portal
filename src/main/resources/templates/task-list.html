@@ -20,23 +20,29 @@
 </table>
 
 <script>
+    // Fetch all tasks from the backend and display them in the table
     fetch('/allTasks')
-        .then((response) => response.json())
-        .then((data) => {
+        .then(response => response.json())
+        .then(data => {
             const tableBody = document.getElementById('task-table-body');
-            data.forEach((task) => {
+
+            // Clear any existing rows
+            tableBody.innerHTML = '';
+
+            // Populate the table with data
+            data.forEach(task => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${task.taskId}</td>
-                    <td>${task.taskName}</td>
-                    <td>${task.taskDescription}</td>
-                    <td>${task.taskDate}</td>
-                    <td>${task.taskPriority}</td>
-                `;
+                        <td>${task.taskId || 'N/A'}</td>
+                        <td>${task.taskName || 'N/A'}</td>
+                        <td>${task.taskDescription || 'N/A'}</td>
+                        <td>${task.taskDate || 'N/A'}</td>
+                        <td>${task.taskPriority || 'N/A'}</td>
+                    `;
                 tableBody.appendChild(row);
             });
         })
-        .catch((error) => console.error(error));
+        .catch(error => console.error('Error:', error));
 </script>
 </body>
 </html>
