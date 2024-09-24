@@ -6,6 +6,7 @@ import com.satish.assignment_sys.assignment_system.DTO.TaskResponseDTO;
 import com.satish.assignment_sys.assignment_system.Service.All_The_Tasks;
 import com.satish.assignment_sys.assignment_system.Service.TaskService;
 import com.satish.assignment_sys.assignment_system.model.Task;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -49,19 +50,13 @@ public class TaskControl {
         return responseDTOs;
     }
 
-//    @GetMapping("Tasks")
-//    public List<TaskResponseDTO> getAllTasks() {
-//        List<Task> tasks = taskService.getAllTasks();
-//        List<TaskResponseDTO> responseDTOs = new ArrayList<TaskResponseDTO>();
-//        for (Task task : tasks) {
-//            responseDTOs.add(responseDTO.convertToTask(task));
-//        }
-//        return responseDTOs;
-//    }
+
 
     @DeleteMapping("task/{Id}")
     public void deleteTaskById(@PathVariable int Id){
         taskService.deleteTask(Id);
     }
+
+
 
 }

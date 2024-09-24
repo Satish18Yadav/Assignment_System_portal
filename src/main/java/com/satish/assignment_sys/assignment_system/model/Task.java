@@ -1,7 +1,4 @@
 package com.satish.assignment_sys.assignment_system.model;
-
-
-
 import com.fasterxml.jackson.annotation.JsonTypeId;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -25,4 +22,8 @@ public class Task implements Serializable {
     private Asignee asignee;
     private String Date;
     private String Priority;
+
+    public Task(int id, String taskName, String taskDescription, String taskPriority, String taskDate) {
+
+    }
 }
