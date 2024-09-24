@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Task</title>
+</head>
+<body>
+<h1>Create a New Task</h1>
+<form action="/createTask" method="post">
+    <label for="taskName">Task Name:</label>
+    <input type="text" id="taskName" name="taskName"><br><br>
+
+    <label for="taskDescription">Task Description:</label>
+    <input type="text" id="taskDescription" name="taskDescription"><br><br>
+
+    <label for="taskDate">Task Date:</label>
+    <input type="date" id="taskDate" name="taskDate"><br><br>
+
+    <label for="taskPriority">Task Priority:</label>
+    <input type="text" id="taskPriority" name="taskPriority"><br><br>
+
+    <input type="submit" value="Create Task">
+</form>
+</body>
+</html>
