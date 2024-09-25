@@ -12,13 +12,16 @@ import java.util.List;
 @Setter
 @Entity
 @NoArgsConstructor
-public class Asignee {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer Id;
-    String name;
+    private String name;
    private String email;
+   private String password;
    @JsonIgnore
-   @OneToMany(mappedBy = "asignee", fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
+   @OneToMany(mappedBy = "users", fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
    List<Task> Task;
+
+
 }

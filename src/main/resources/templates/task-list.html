@@ -20,16 +20,16 @@
 </table>
 
 <script>
-    // Fetch all tasks from the backend and display them in the table
+
     fetch('/allTasks')
         .then(response => response.json())
         .then(data => {
             const tableBody = document.getElementById('task-table-body');
 
-            // Clear any existing rows
+
             tableBody.innerHTML = '';
 
-            // Populate the table with data
+
             data.forEach(task => {
                 const row = document.createElement('tr');
                 row.innerHTML = `

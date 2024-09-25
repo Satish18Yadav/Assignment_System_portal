@@ -15,6 +15,7 @@ public class TaskRequestDTO {
     private String taskDescription;
     private String taskDate;
     private String taskPriority;
+    private Integer userId;
 
 
 }
