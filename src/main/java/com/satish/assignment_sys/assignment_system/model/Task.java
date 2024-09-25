@@ -16,8 +16,8 @@ public class Task implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String Description;
     private String taskName;
+    private String Description;
     @ManyToOne(cascade = {CascadeType.PERSIST})
     private Asignee asignee;
     private String Date;
